@@ -3,9 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({ //Etiqueta para indicar que es un component
   selector: 'app-componente', //La forma de llamar nuestro componente
   templateUrl: './componente.component.html', //La referencia hacia un archivo html
+  //template:'<!--Inserte un codigo html aca-->',//La forma directa de poner un codigo html
   //(>14) standAlone: true/false, // EN angular superiores a 14 sirve para indicar que es un componente independiente y no necesita de los modulos
   //(>14)imports: [] Que sirven para importar componentes, servicios, entre otras cosas 
-  //template:'<!--Inserte un codigo html aca-->',//La forma directa de poner un codigo html
   styleUrls: ['./componente.component.css'] //Son las referencias a los archivos css para nuestro componente
 })
 export class ComponenteComponent implements OnInit {

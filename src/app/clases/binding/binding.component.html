@@ -16,4 +16,72 @@
             </ul>
         </div>
     </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-8">
+            <h3>Interpolacion</h3>
+            <br>
+            <p>Un mecanismo para poder sustituir una expresion por un valor que puede estar en nuestro TS , para esto nos apoyaremos de los caracteres {{'{{}}'}}</p>
+        </div>
+        <div class="col-md-4">
+            <h4>Ejemplo:</h4>
+            <ul>
+                <li>
+                    1) {{ soyUnaVariableEnElTS }}
+                </li>
+                <li>
+                    2) {{ 2+2 }}
+                </li>
+                <li>
+                    3) {{ retornarString() }}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-8">
+            <h3>Property Binding (Enlace de propiedades)</h3>
+            <br>
+            <p>Es el enlace que se hace para propiedades con la sintaxis de:</p>
+            <br>
+            <p>[propiedad]="expresion"</p>
+        </div>
+        <div class="col-md-4">
+            <h4>Ejemplo: </h4>
+            <button [disabled]="botonVariable">Un boton</button>
+            <button [hidden]="oculto">Otro boton</button>
+            <img [src]="urlImg" [style.width.px]="100">
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-8">
+            <h3>Event Binding (enlace de eventos)</h3>
+            <p>Es el enlace que se hace del html al ts a traves de los eventos y su sintaxis es de:</p>
+            <br>
+            <p>(evento)="expresion"</p>
+
+        </div>
+        <div class="col-md-4">
+            <h4>Ejemplo</h4>
+            <button class="btn btn-success" (click)="cambiarMensaje()">Aprietame</button>
+            <input type="text" (blur)="cambiarMensajeDesdeInput($event)">
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-8">
+            <h3>Two way binding (Enlace bidireccional)</h3>
+            <p>Es una forma de tener una comunicacion bidireccional  en un modelo de formulario o inputs (tambien llamado template form) y nos permite una comunicacion mas breve. Tiene la siguiente sintaxys:</p>
+            <br>
+            <p>[(ngModel)]="expresion"</p>
+        </div>
+        <div class="col-md-4">
+            <h4>Ejemplo</h4>
+            <input type="text" [(ngModel)]="soyUnaVariableEnElTS">
+            <p>{{variableNgModel}}</p>
+        </div>
+    </div>
 </div>
+
