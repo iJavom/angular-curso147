@@ -1,5 +1,28 @@
-<app-componente></app-componente>
-<hr>
-<app-binding></app-binding>
-<hr>
-<app-ciclo-vida></app-ciclo-vida>
+<h3>Escoja una clase</h3>
+<!-- <select class="form-select" (change)="cambiarValorSelector($event)">
+    <option value="0">Seleccione Uno</option>
+    <option value="Componentes">Componentes</option>
+    <option value="Binding">Binding - Conexiones</option>
+    <option value="CicloDeVida">Ciclo de vida</option>
+    <option value="Directivas">Directivas</option>
+    
+</select> -->
+<select class="form-select" [(ngModel)]="claseSeleccionada">
+    <option [value]="''">Seleccione Uno</option>
+    <option [value]="'Componentes'">Componentes</option>
+    <option [value]="'Binding'">Binding - Conexiones</option>
+    <option [value]="'CicloDeVida'">Ciclo de vida</option>
+    <option [value]="'Directivas'">Directivas</option>
+    
+</select> 
+<h1 class="text-center">{{claseSeleccionada}}</h1>
+<ng-container [ngSwitch]="claseSeleccionada">
+    <app-componente *ngSwitchCase=" 'Componentes'"></app-componente>
+    <hr>
+    <app-binding *ngSwitchCase="'Binding' "></app-binding>
+    <hr>
+    <app-ciclo-vida *ngSwitchCase="'CicloDeVida' "></app-ciclo-vida>
+    <hr>
+    <app-directivas *ngSwitchCase="'Directivas' "></app-directivas>
+
+</ng-container>

@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClasesComponent implements OnInit {
 
+  claseSeleccionada="";
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  cambiarValorSelector(e:any){
+    this.claseSeleccionada = e.target.value;
   }
 
 }

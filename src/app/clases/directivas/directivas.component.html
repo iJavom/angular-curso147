@@ -1,0 +1,135 @@
+<div class="container">
+    <div class="row">
+        <h2>Directivas</h2>
+    </div>
+    <div class="col-md-9">
+        <p>Es la herramienta que nos da angular para poder dar esos comportamientos adicionales sobre nuestro elementos en el DOM (Document Object Model)</p>
+        <br>
+        <h5>Tipos de directivas:</h5>
+        <ul>
+            <li>Components Directives: Son las directivas mas comunes y son las que genralmente definen la estructura, estilo y logica</li>
+            <li>Structural Directives: Sirven para definir que se va a renderizar en neustro dom y por ende puede cambiar el diseño. Un ejemplo puede ser : *ngIf</li>
+            <li>Attribute Directives: Sirven para cambiar los atributos de nuestro elemento</li>
+        </ul>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-8">
+            <h3>Components Directives</h3>
+            <br>
+            <p>Son aquellas etiquetas especiales que nos permiten invocar componentes, librerias,modulos</p>
+
+        </div>
+        <div class="col-md-4">
+            <h4>Ejemplo:</h4>
+            <!-- <app-ciclo-vida></app-ciclo-vida> -->
+            <ng-container>
+                <p>No tengo padre ng-container , generalmente viene acompañado de directivas como ngIf, ngFor, ngSwitch</p>
+            </ng-container>
+            <!-- <ng-template></ng-template> Sirve para reutilizar bloques de codigo-->
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <h3>
+            Structural Directives
+        </h3>
+        <br>
+        <p>Son el conjunto de directivas que permiten definir la estructura de nuestro DOM / HTML a partir de las propiedades que presentamos en nuestro component</p>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-8">
+            <h3>*ngIf</h3>
+            <br>
+            <p>Sirve para determinar si un elemento de nuestro html se va a renderizar o no</p>
+            <br>
+            <p>Su sintaxis es en forma de atributo de una etiqueta y se pone *ngIf="Booleano"</p>
+            <br>
+            <p>En angular 17 es en el nuevo angular 17 es {{'@if(booleano){...}@else{...}'}}</p>
+        </div>
+        <div class="col-md-4">
+            <h4>Ejemplo:</h4>
+            <div *ngIf="variableBooleana; else templateElse">
+                <input type="text" placeholder="Desparecere si aprietas el boton">
+            </div>
+            <ng-template #templateElse>
+                <h4>Ya no esta el input</h4>
+            </ng-template>
+            <button (click)="variableBooleana=!variableBooleana" class="btn btn-primary">Aparecer/Desaparecer</button>
+            <!-- ejemplo estructura nueva -->
+            <!-- @if(variableBooleana){
+                <div>
+                  <input type="text" placeholder="Si clickas el boton desaparezco">
+                </div>
+              }@else {
+                <div>
+                  <h4>Ya no esta el input</h4>
+                </div>
+              } -->
+              
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-8">
+            <h3>*ngFor</h3>
+            <br>
+            <p>Es una directiva para iterar sobre una coleccion o array y renderizar cada elemento de este</p>
+            <br>
+            <p>Su sintaxis es *nfor="let elemento of array; let i=index"</p>
+
+        </div>
+        <div class="col-md-4">
+            <h4>Ejemplo:</h4>
+            <ul>
+                <!-- nota: En este ejemplo podemos apreciar que para poner un ngIf por elemento nos apoyamos del ng-container para usar el ngFor -->
+                <ng-container *ngFor="let numero of numeros; let i=index" >
+                    <li *ngIf="i%2==0">
+                    {{numero}} - esta es la posicion : {{i}}
+                    </li>
+                </ng-container>
+                <!-- volvemos a las 8:20 -->
+                <!-- @for(numero of numeros; track numeros;let i = $index){
+                    <li>
+                    {{numero}} - esta es la posicion : 
+                    </li>
+                } @empty {
+                    Sin elementos :(
+                } -->
+            </ul>
+
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-8">
+            <h3>ngSwitch</h3>
+            <br>
+            <p>Permite renderizar o no elementos en nuestro html dependiendo de una expresion</p>
+            <br>
+            <p>La sintaxis consta de 3 directivas:</p>
+            <ul>
+                <li>[ngSwitch]="expresion" -> Corresponde a la expresion a evaluar</li>
+                <li> *ngSwitchCase="valor" -> Corresponde a las posibles opciones</li>
+                <li> *ngSwitchDefault -> Corresponde en caso de no conseguir la opcion</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h4>ejemplo:</h4>
+            <div [ngSwitch]="status">
+                <p *ngSwitchCase="'En Proceso'">Su pedido esta siendo procesado</p>
+                <p *ngSwitchCase="'Listo'">Su pedido esta listo</p>
+                <p *ngSwitchCase="'Entregado'">Su pedido ha sido entregado</p>
+                <p *ngSwitchDefault>Estado desconocido</p>
+            </div>
+            <!-- @switch(status){
+                @case('En Proceso') {<p>Su pedido esta siendo procesado</p>}
+                @case('Listo') {<p>Su pedido esta listo</p>}
+                @case('Entregado') {<p >Su pedido ha sido entregado</p>}
+                @default {<p>Estado desconocido</p>}
+              } -->
+        </div>
+    </div>
+
+</div>
