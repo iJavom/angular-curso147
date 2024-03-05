@@ -1,4 +1,19 @@
-<h3>Escoja una clase</h3>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">UNC - Angular</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item" *ngFor="let item of menu">
+            <a class="nav-link" (click)="claseSeleccionada=item.link" href="#">{{item.nombre}}</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
 <!-- <select class="form-select" (change)="cambiarValorSelector($event)">
     <option value="0">Seleccione Uno</option>
     <option value="Componentes">Componentes</option>
@@ -7,22 +22,24 @@
     <option value="Directivas">Directivas</option>
     
 </select> -->
-<select class="form-select" [(ngModel)]="claseSeleccionada">
+<!-- <select class="form-select" [(ngModel)]="claseSeleccionada">
     <option [value]="''">Seleccione Uno</option>
     <option [value]="'Componentes'">Componentes</option>
     <option [value]="'Binding'">Binding - Conexiones</option>
     <option [value]="'CicloDeVida'">Ciclo de vida</option>
     <option [value]="'Directivas'">Directivas</option>
+    <option [value]="'Calculadora'">Calculadora</option>
     
-</select> 
+</select>  -->
 <h1 class="text-center">{{claseSeleccionada}}</h1>
 <ng-container [ngSwitch]="claseSeleccionada">
-    <app-componente *ngSwitchCase=" 'Componentes'"></app-componente>
+    <app-componente *ngSwitchCase=" 'componentes'"></app-componente>
     <hr>
-    <app-binding *ngSwitchCase="'Binding' "></app-binding>
+    <app-binding *ngSwitchCase="'binding' "></app-binding>
     <hr>
-    <app-ciclo-vida *ngSwitchCase="'CicloDeVida' "></app-ciclo-vida>
+    <app-ciclo-vida *ngSwitchCase="'ciclo-de-vida' "></app-ciclo-vida>
     <hr>
-    <app-directivas *ngSwitchCase="'Directivas' "></app-directivas>
-
+    <app-directivas *ngSwitchCase="'directivas' "></app-directivas>
+    <hr>
+    <app-calculadora *ngSwitchCase="'calculadora'"></app-calculadora>
 </ng-container>

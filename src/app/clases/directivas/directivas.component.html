@@ -131,5 +131,38 @@
               } -->
         </div>
     </div>
+    <hr>
+    <div class="row">
+        <h3>Attribute Directives</h3>
+        <p>Es aquella herramienta que nos ofrece angular para modificar nuestros atributos del html</p>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+            <h3>ngClass</h3>
+            <p>El ngClass que nos va a permitir agregar, eliminar o modificar directamente el atributo class</p>
+            <br>
+            <p>La sintaxis es: [ngClass]="'nombre-clases': expresion"</p>
+        </div>
+        <div class="col-md-3">
+            <h4>Ejemplo:</h4>
+            <button class="btn" [ngClass]="{'btn-primary w-25':variableBooleana,'btn-danger':!variableBooleana}" (click)="variableBooleana=!variableBooleana">Soy un boton cambiante</button>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+            <h3>ngStyle</h3>
+            <br>
+            <p>Es una directiva comunmente usada para hacer modificaciones de nuestro atributo style en nuestro html</p>
+            <br>
+            <p>La sintaxis: [ngStyle]="'propiedadCss':expresion"</p>
+        </div>
+        <div class="col-md-3">
+            <h4>Ejemplo</h4>
+            <div class="card">
+                <div class="card-body" (click)="incrementar()" [ngStyle]="estilosObjeto"></div>
+            </div>
+        </div>
+    </div>
 
 </div>

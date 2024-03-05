@@ -10,10 +10,24 @@ export class DirectivasComponent implements OnInit {
   numeros = ['01','02','03','04','05'];
 
   status="Listo";
+  variableStyleColor = "red";
+  valorNumerico = 10;
+
+  estilosObjeto = {
+    'height': this.valorNumerico+'em',
+    'background-color':'cyan'
+  };
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  incrementar(){
+    this.estilosObjeto = {
+      'height': this.valorNumerico+'em',
+      'background-color':'cyan'
+    };
   }
 
 }

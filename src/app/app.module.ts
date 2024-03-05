@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { CicloVidaComponent } from './clases/ciclo-vida/ciclo-vida.component';
 import { ClasesComponent } from './clases/clases.component';
 import { DirectivasComponent } from './clases/directivas/directivas.component';
+import { CalculadoraComponent } from './clases/calculadora/calculadora.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DirectivasComponent } from './clases/directivas/directivas.component';
     BindingComponent,
     CicloVidaComponent,
     ClasesComponent,
-    DirectivasComponent
+    DirectivasComponent,
+    CalculadoraComponent
   ],
   imports: [
     BrowserModule,
