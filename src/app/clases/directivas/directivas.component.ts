@@ -24,6 +24,7 @@ export class DirectivasComponent implements OnInit {
   }
 
   incrementar(){
+
     this.estilosObjeto = {
       'height': this.valorNumerico+'em',
       'background-color':'cyan'

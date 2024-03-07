@@ -10,6 +10,12 @@ import { CicloVidaComponent } from './clases/ciclo-vida/ciclo-vida.component';
 import { ClasesComponent } from './clases/clases.component';
 import { DirectivasComponent } from './clases/directivas/directivas.component';
 import { CalculadoraComponent } from './clases/calculadora/calculadora.component';
+import { ComunicacionComponentesComponent } from './clases/comunicacion-componentes/comunicacion-componentes.component';
+import { ComponenteInputComponent } from './clases/comunicacion-componentes/componente-input/componente-input.component';
+import { ComponenteOutputComponent } from './clases/comunicacion-componentes/componente-output/componente-output.component';
+import { MenuClasesComponent } from './clases/menu-clases/menu-clases.component';
+import { RoutingComponent } from './clases/routing/routing.component';
+import { TiendaComponent } from './tienda/tienda.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +25,13 @@ import { CalculadoraComponent } from './clases/calculadora/calculadora.component
     CicloVidaComponent,
     ClasesComponent,
     DirectivasComponent,
-    CalculadoraComponent
+    CalculadoraComponent,
+    ComunicacionComponentesComponent,
+    ComponenteInputComponent,
+    ComponenteOutputComponent,
+    MenuClasesComponent,
+    RoutingComponent,
+    TiendaComponent
   ],
   imports: [
     BrowserModule,

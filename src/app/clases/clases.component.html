@@ -1,19 +1,5 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">UNC - Angular</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item" *ngFor="let item of menu">
-            <a class="nav-link" (click)="claseSeleccionada=item.link" href="#">{{item.nombre}}</a>
-          </li>
+<app-menu-clases (cambiarPagina)="cambiarValorSelector($event)"></app-menu-clases>
 
-        </ul>
-      </div>
-    </div>
-  </nav>
 <!-- <select class="form-select" (change)="cambiarValorSelector($event)">
     <option value="0">Seleccione Uno</option>
     <option value="Componentes">Componentes</option>
@@ -32,7 +18,7 @@
     
 </select>  -->
 <h1 class="text-center">{{claseSeleccionada}}</h1>
-<ng-container [ngSwitch]="claseSeleccionada">
+<!-- <ng-container [ngSwitch]="claseSeleccionada">
     <app-componente *ngSwitchCase=" 'componentes'"></app-componente>
     <hr>
     <app-binding *ngSwitchCase="'binding' "></app-binding>
@@ -42,4 +28,9 @@
     <app-directivas *ngSwitchCase="'directivas' "></app-directivas>
     <hr>
     <app-calculadora *ngSwitchCase="'calculadora'"></app-calculadora>
-</ng-container>
+    <hr>
+    <app-comunicacion-componentes *ngSwitchCase="'comunicacion-component'"></app-comunicacion-componentes>
+    <hr>
+    <app-routing></app-routing>
+</ng-container> -->
+<router-outlet></router-outlet>

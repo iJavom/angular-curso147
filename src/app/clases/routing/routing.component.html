@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <h3>Routing</h3>
+        <br>
+        <p>
+            El routing es un modulo de angular que nos permite aprovechar lo que es el direccionamiento del navegador (barra direcciones) para definir que componente o modulos vamos a ir cargando y/o renderizando
+        </p>
+        <br>
+        <p>
+            Siempre que tenemos un routing este debe  ser importado en el modulo correspondiente y tiene una nomenclatura de nombre
+            nombre-routing.module.ts (es decir viene en pareja) y para angular 17 se llama igual que el modulo/componente siendo puntuales nombre.routes
+        </p>
+        <br>
+        <p>
+            En el archivo se manejara en cualquier angular en la parte superior la importancion de la clase routes que es la que nos definira cual es la ruta (path) y los componentes a usar.
+        </p>
+        <br>
+        <p>Nota: Revisar app-routing.module.ts para ver anotaciones extra</p>
+        <br>
+        <p>routes es un array de route que basicamente es una clase que contiene una serie de atributos, donde podemos encontrar:</p> 
+        <ul>
+            <li>path (que sirve para definir la ruta a la cual se va a acceder)</li>
+            <li>component (para definir al componente que va a acceder esa ruta)</li>
+        </ul>
+        <br>
+        <p><strong>Es importante:</strong> que cuando vayamos a usar routing especifiquemos en el componente <strong>router-outlet</strong></p>
+         
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <h3>Comunicación entre componentes</h3>
+        <br>
+        <p>Es la forma que nos ofrece angular de poder comunicar nuestros componentes.</p>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-9">
+            <h3>@Input</h3>
+            <br>
+            <p>Es la herramienta que nos ofrece angular para poder dar entrada de datos a un componente ya sea inicializandolo o en el proceso de la logica.</p>
+        </div>
+        <div class="col-md-3">
+            <h4  (click)="valorPadre='Cambie desde el padre'">Ejemplo (Verificar en el componente input): {{valorPadre}}</h4>
+            <br>
+            <app-componente-input [tituloComponente]="valorPadre" ></app-componente-input>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-9">
+            <h3>@Output</h3>
+            <br>
+            <p>Es la funcion que nos permite comunicar desde el hijo hacia el padre a traves de un evento.</p>
+        </div>
+        <div class="col-md-3">
+            <h4>Ejemplo:</h4>
+            <br>
+            <p>{{ejemploOutput}}</p>
+            <app-componente-output (unEventoParaPadre)="funcionParaProbarOutput($event)"></app-componente-output>
+        </div>
+    </div>
+</div>

@@ -6,36 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./clases.component.css'],
 })
 export class ClasesComponent implements OnInit {
-  menu = [
-    {
-      nombre: 'Componentes',
-      link: 'componentes',
-    },
-    {
-      nombre: 'Binding',
-      link: 'binding',
-    },
-    {
-      nombre: 'Ciclo de vida',
-      link: 'ciclo-de-vida',
-    },
-    {
-      nombre: 'Directivas',
-      link: 'directivas',
-    },
-    {
-      nombre: 'Calculadora',
-      link: 'calculadora',
-    },
-  ];
 
-  claseSeleccionada = '';
+
+  claseSeleccionada = "";
 
   constructor() {}
 
   ngOnInit(): void {}
 
   cambiarValorSelector(e: any) {
-    this.claseSeleccionada = e.target.value;
+    this.claseSeleccionada = e;
   }
 }
