@@ -24,6 +24,23 @@
         </ul>
         <br>
         <p><strong>Es importante:</strong> que cuando vayamos a usar routing especifiquemos en el componente <strong>router-outlet</strong></p>
-         
+         <br>
+         <p>Tambien podemos crear rutas parametrizadas y esto se hace gracias al atributo path, donde podemos definir los parametros usando el caracter ":" puesto posteriormente a un slash "/" para poder invocarlo con la libreria ActivatedRoute, para ver el <strong>ejemplo mirar en el ts</strong>  
+        </p>
+
+        <br>
+        <p>
+            Gracias a routing nosotros tambien nos podemos desplazar mediante modulos de nuestro router, en este caso tenemos a la dependencia "Router" que nos permitira desplazarnos desde el TS
+        </p>
+        <br>
+        <p> Para desplazarnos con Router lo invocamos en el constructor y despues mediante su nombre usamos el metodo navigateByUrl - Ejemplo : "this.router.navigateByUrl('/clases/Routing/r-dos')"</p>
+        <br>
+        <p>Si queremos desplazarnos con el html podemos usar la diretiva "[routerLink]" donde le vamos a pasar una expresion con la ruta a la que queremos acceder</p>
+        <br>
+        <p>Tambien tenemos la directiva "[routerLinkActive]" que sirve para indicar si estamos ubicados en una ruta y poder aplicar una clase ver ejemplo en menu </p>
+    </div>
+    <div class="row">
+        <h4 class="text-center">Ejemplo:</h4>
+        <router-outlet></router-outlet>
     </div>
 </div>

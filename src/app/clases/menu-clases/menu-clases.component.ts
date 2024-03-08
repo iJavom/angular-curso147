@@ -11,27 +11,31 @@ export class MenuClasesComponent implements OnInit {
   menu = [
     {
       nombre: 'Componentes',
-      link: 'clases/Componentes',
+      link: 'Componentes', //Ejemplo Ruta Relativa (Empiezan sin el slash)
     },
     {
       nombre: 'Binding',
-      link: 'clases/Binding',
+      link: '/clases/Binding', //Ejemplo Ruta absoluta (Empiezan con slash)
     },
     {
       nombre: 'Ciclo de vida',
-      link: 'clases/CicloDeVida',
+      link: 'CicloDeVida',
     },
     {
       nombre: 'Directivas',
-      link: 'clases/Directivas',
+      link: 'Directivas',
     },
     {
       nombre: 'Calculadora',
-      link: 'clases/Calculadora',
+      link: 'Calculadora',
     },
     {
       nombre: 'Comunicacion',
-      link: 'clases/comunicacion-component'
+      link: 'Comunicacion'
+    },
+    {
+      nombre: 'Routing',
+      link: 'Routing'
     }
   ];
 

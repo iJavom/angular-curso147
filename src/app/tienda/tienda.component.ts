@@ -7,6 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TiendaComponent implements OnInit {
 
+  menu =[
+    {
+      nombre: 'Inicio',
+      link: '/tienda/inicio'
+    },
+    {
+      nombre: 'Productos',
+      link : '/tienda/productos'
+    },
+    {
+      nombre: 'Contactanos',
+      link: '/tienda/contactanos'
+    }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {

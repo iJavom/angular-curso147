@@ -1,5 +1,8 @@
 <app-menu-clases (cambiarPagina)="cambiarValorSelector($event)"></app-menu-clases>
+<router-outlet></router-outlet>
 
+
+<!-- codigo anterior -->
 <!-- <select class="form-select" (change)="cambiarValorSelector($event)">
     <option value="0">Seleccione Uno</option>
     <option value="Componentes">Componentes</option>
@@ -17,7 +20,7 @@
     <option [value]="'Calculadora'">Calculadora</option>
     
 </select>  -->
-<h1 class="text-center">{{claseSeleccionada}}</h1>
+<!-- <h1 class="text-center">{{claseSeleccionada}}</h1> -->
 <!-- <ng-container [ngSwitch]="claseSeleccionada">
     <app-componente *ngSwitchCase=" 'componentes'"></app-componente>
     <hr>
@@ -33,4 +36,3 @@
     <hr>
     <app-routing></app-routing>
 </ng-container> -->
-<router-outlet></router-outlet>
