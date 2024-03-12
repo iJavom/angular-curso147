@@ -1,0 +1,46 @@
+<div class="container mt-3">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="mb-3">
+          <label class="form-label">Filtro Categorias</label>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Cantidad</label>
+          <input type="number" class="form-control" placeholder="Introduzca un numero">
+        </div>
+        <button class="btn btn-success w-100">Filtrar</button>
+      </div>
+      <div class="col-md-9" style="height: 30em">
+        <div class="d-flex justify-content-end">
+          <button class="btn btn-success mb-3" [routerLink]="'/tienda/productos/formulario'">Añadir</button>
+        </div>
+        <div class="card mb-3" *ngFor="let producto of productos; let i = index">
+          <div class="row g-0">
+            <div class="col-md-4 text-center p-3">
+              <img
+                [src]="producto.image"
+                class="img-fluid rounded-start"
+                [alt]="producto.title"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{ producto.title }}</h5>
+                <p class="card-text">{{ producto.description }}</p>
+                <p class="card-text">
+                  <small class="text-body-secondary"> ${{ producto.price }}</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

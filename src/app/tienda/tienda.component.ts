@@ -14,7 +14,7 @@ export class TiendaComponent implements OnInit {
     },
     {
       nombre: 'Productos',
-      link : '/tienda/productos'
+      link : '/tienda/productos/lista'
     },
     {
       nombre: 'Contactanos',

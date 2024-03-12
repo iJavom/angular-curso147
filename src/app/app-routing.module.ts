@@ -15,6 +15,8 @@ import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
 import { ProductosComponent } from './tienda/productos/productos.component';
 import { InicioComponent } from './tienda/inicio/inicio.component';
 import { ContactanosComponent } from './tienda/contactanos/contactanos.component';
+import { FormularioComponent } from './tienda/productos/formulario/formulario.component';
+import { ListaComponent } from './tienda/productos/lista/lista.component';
 //En routes nosotros vamos a guardar en forma de objetos, las posibles rutas con sus respectivos componentes o modulos
 const routes: Routes = [
 
@@ -59,8 +61,17 @@ const routes: Routes = [
 
   // LO DE ARRIBA ES TEORIA  SE PUEDE OMITIR PARA LA TIENDA
   { path: 'tienda', component: TiendaComponent, children:[
+    //Volvemos a las 8:20;
+
     {
-      path:'productos',component: ProductosComponent,
+      path:'productos',component: ProductosComponent, children:[
+        {
+          path:'formulario',component: FormularioComponent,
+        },
+        {
+          path:'lista',component: ListaComponent,
+        },
+      ]
     },
     {
       path:'inicio', component:InicioComponent

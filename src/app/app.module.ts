@@ -23,6 +23,14 @@ import { NavbarComponent } from './tienda/navbar/navbar.component';
 import { InicioComponent } from './tienda/inicio/inicio.component';
 import { ProductosComponent } from './tienda/productos/productos.component';
 import { ContactanosComponent } from './tienda/contactanos/contactanos.component';
+import { ModelsComponent } from './clases/models/models.component';
+import { ServicesComponent } from './clases/services/services.component';
+import { ProductosService } from './shared/services/productos.service';
+import { FormularioComponent } from './tienda/productos/formulario/formulario.component';
+import { ListaComponent } from './tienda/productos/lista/lista.component';
+import { HttpclientComponent } from './clases/httpclient/httpclient.component';
+import { HttpClientModule } from '@angular/common/http'
+
 
 @NgModule({
   declarations: [
@@ -45,14 +53,20 @@ import { ContactanosComponent } from './tienda/contactanos/contactanos.component
     NavbarComponent,
     InicioComponent,
     ProductosComponent,
-    ContactanosComponent
+    ContactanosComponent,
+    ModelsComponent,
+    ServicesComponent,
+    FormularioComponent,
+    ListaComponent,
+    HttpclientComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ProductosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
