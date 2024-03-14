@@ -1,34 +1,54 @@
 <div class="container">
+  <form [formGroup]="formulario">
     <div class="row">
-        <div class="mb-3">
-            <label class="form-label">Titulo</label>
-            <input type="text" class="form-control" placeholder="Inserte su titulo">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Precio</label>
-            <input type="text" class="form-control" placeholder="Inserte el precio">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Descripción</label>
-            <textarea class="form-control" placeholder="Inserte una descrición"></textarea>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Categorias</label>
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Seleccione una opcion</option>
-              <option value="1">Joyas</option>
-              <option value="2">Ropa</option>
-              <option value="3">Electronico</option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Imagen</label>
-            <input type="text" class="form-control" placeholder="Inserte el enlace de su imagen">
-        </div>
+      <div class="mb-3">
+        <label class="form-label">Titulo</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Inserte su titulo"
+          formControlName="title"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Precio</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Inserte el precio"
+          formControlName="price"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Descripción</label>
+        <textarea
+          class="form-control"
+          placeholder="Inserte una descrición"
+          formControlName="description"
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Categorias</label>
+        <select class="form-select" formControlName="category"> 
+            <option [value]="''">Seleccione una opcion</option>
+            <option *ngFor="let categoria of categorias" [value]="categoria">{{categoria}}</option>
+          </select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Imagen</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Inserte el enlace de su imagen"
+          formControlName="image"
+        />
+      </div>
     </div>
     <div class="row">
-        <button class="btn btn-light col-md-6" [routerLink]="'/tienda/productos/lista'">Volver</button>
-        <button class="btn btn-success  col-md-6">Guardar</button>
+      <button class="btn btn-light col-md-6" [routerLink]="'/tienda/productos/lista'">
+        Volver
+      </button>
+      <button class="btn btn-success col-md-6" (click)="guardar()">Guardar</button>
     </div>
-
+  </form>
 </div>

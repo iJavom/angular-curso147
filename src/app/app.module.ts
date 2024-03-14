@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponenteComponent } from './clases/componente/componente.component';
 import { BindingComponent } from './clases/binding/binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CicloVidaComponent } from './clases/ciclo-vida/ciclo-vida.component';
 import { ClasesComponent } from './clases/clases.component';
 import { DirectivasComponent } from './clases/directivas/directivas.component';
@@ -29,7 +29,8 @@ import { ProductosService } from './shared/services/productos.service';
 import { FormularioComponent } from './tienda/productos/formulario/formulario.component';
 import { ListaComponent } from './tienda/productos/lista/lista.component';
 import { HttpclientComponent } from './clases/httpclient/httpclient.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { FormulariosComponent } from './clases/formularios/formularios.component'
 
 
 @NgModule({
@@ -58,12 +59,14 @@ import { HttpClientModule } from '@angular/common/http'
     ServicesComponent,
     FormularioComponent,
     ListaComponent,
-    HttpclientComponent
+    HttpclientComponent,
+    FormulariosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [ProductosService],

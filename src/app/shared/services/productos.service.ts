@@ -11,9 +11,21 @@ export class ProductosService {
 
   constructor(private http: HttpClient) {}
 
-  obtenerProductos(){
-    return this.http.get(`${this.apiUrl}products`);
+  obtenerProductos(tamanio?:number, categoria?:string){
+    let query="";
+    if(tamanio){
+      query= `?limit=${tamanio}`
+    }
+    let queryCategoria = "";
+    if(categoria){
+      queryCategoria=`/category/${categoria}`
+    }
+    return this.http.get(`${this.apiUrl}products${queryCategoria}${query}`); //Como podria agregar &sort=desc ?
   }
+
+  // obtenerProductosFiltrados(tamanio:number){
+  //   return this.http.get(`${this.apiUrl}products?limit=${tamanio}`);
+  // }
 
   // obtenerProductos() : Producto[] {
   //   return [
