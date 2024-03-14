@@ -66,6 +66,9 @@ const routes: Routes = [
     {
       path:'productos',component: ProductosComponent, children:[
         {
+          path:'formulario/:id',component: FormularioComponent,
+        },
+        {
           path:'formulario',component: FormularioComponent,
         },
         {

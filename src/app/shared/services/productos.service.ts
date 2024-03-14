@@ -10,7 +10,11 @@ export class ProductosService {
   apiUrl = 'https://fakestoreapi.com/'
 
   constructor(private http: HttpClient) {}
-
+  //C - CREAR
+  crearProducto(producto: Producto){
+    return this.http.post(`${this.apiUrl}products`,JSON.stringify(producto));
+  }
+  //R - LEER TODO
   obtenerProductos(tamanio?:number, categoria?:string){
     let query="";
     if(tamanio){
@@ -21,6 +25,19 @@ export class ProductosService {
       queryCategoria=`/category/${categoria}`
     }
     return this.http.get(`${this.apiUrl}products${queryCategoria}${query}`); //Como podria agregar &sort=desc ?
+  }
+  //R - LEER INDIVIDUAL
+  obtenerProducto(id:number):Observable<Producto>{
+    return this.http.get<Producto>(`${this.apiUrl}products/${id}`);
+  }
+
+  //U - ACTUALIZAR
+  actualizarProducto(id:number, producto: Producto){
+    return this.http.put(`${this.apiUrl}products/${id}`,JSON.stringify(producto));
+  }
+  //D - BORRAR
+  eliminarProducto(id:number){
+    return this.http.delete<Producto>(`${this.apiUrl}products/${id}`);
   }
 
   // obtenerProductosFiltrados(tamanio:number){

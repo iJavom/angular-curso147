@@ -68,4 +68,18 @@ export class ListaComponent implements OnInit {
       }
     })
   }
+
+  eliminarProducto(id:number){
+    this.productosService.eliminarProducto(id).subscribe({
+      next: ()=>{
+        debugger;
+        alert("Eliminacion exitosa!");
+        this.filtrar();
+      },
+      error: (error)=>{
+        alert("Oh oh, algo paso!");
+        console.log(error);
+      },
+    });
+  }
 }

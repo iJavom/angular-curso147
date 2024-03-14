@@ -18,6 +18,13 @@
             <br>
             <p>Forma parte de la libreria <strong>ReactiveFormsModule (obligatorio importar)</strong> y gracias a esta vamos a tener un objeto donde vamos a poder evaluar cada uno de nuestros campos con beneficios como saber si es valido, si fue tocado, si tiene un valor distinto al inicial, etc. Siendo ideal para el manejo de formularios complejos</p>
         </div>
-        
+        <div class="col-md-3">
+            <h4>Ejemplo:</h4>
+            <form [formGroup]="variableFormularioGrupal">
+                <input type="text" formControlName="inputAtributo">
+                <input type="text" formControlName="otroValor">
+            </form>
+        </div>
     </div>
+    
 </div>
