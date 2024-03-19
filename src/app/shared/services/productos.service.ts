@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Producto } from '../models/producto.model';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -28,7 +28,13 @@ export class ProductosService {
   }
   //R - LEER INDIVIDUAL
   obtenerProducto(id:number):Observable<Producto>{
-    return this.http.get<Producto>(`${this.apiUrl}products/${id}`);
+    //Ejemplo para agregar headers (No es indispensable para fakestoreapi)
+    const header= new HttpHeaders({
+      'Authorization': 'Bearer sjadiohn2i3klhnb4r8ihsxzn'
+    })
+    return this.http.get<Producto>(`${this.apiUrl}products/${id}`,{
+      headers: header,
+    });
   }
 
   //U - ACTUALIZAR

@@ -18,5 +18,9 @@ export class ComunicacionComponentesComponent implements OnInit {
     debugger;
     console.log(msj)
   }
+  saludar(mensaje: any){
+    alert(mensaje);
+    debugger;
+  }
 
 }

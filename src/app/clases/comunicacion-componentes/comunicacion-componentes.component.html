@@ -31,4 +31,17 @@
             <app-componente-output (unEventoParaPadre)="funcionParaProbarOutput($event)"></app-componente-output>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-9">
+            <h3>Referencias locales</h3>
+            <br>
+            <p>Son objetos que se definen dentro de nuestro template. Gracias a ellas podemos acceder y hacer referencias de los elementos del dom o componentes para ser usados</p>
+        </div>
+        <div class="col-md-3">
+            <h4>Ejemplo:</h4>
+            <input type="text" #HolaSoyLaReferencia placeholder="Escribe algo">
+            <button class="btn btn-primary" (click)="saludar(HolaSoyLaReferencia)"> clickame </button>
+        </div>
+    </div>
 </div>
