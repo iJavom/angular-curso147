@@ -7,7 +7,7 @@ import { Component, Input, OnInit, SimpleChange } from '@angular/core';
 })
 export class CicloVidaComponent implements OnInit {
 
-
+  metodoAsincrono : any;
   constructor() { //*****
     //El constructor es ideal para hacer inyecciones de dependencias e inicializar datos de manera sincrona
     console.log('1-Constructor');
@@ -25,6 +25,11 @@ export class CicloVidaComponent implements OnInit {
   ngOnInit(): void { //****
     //Se ejecuta una vez se hayan inicializado las propiedades enlazadas del componente. Se utiliza para cargar datos que ya vienen de manera asincrona
     console.log('3-ngOnInit');
+    let contador = 0;
+    this.metodoAsincrono = setInterval(()=>{
+      contador++;
+      console.log(contador);
+    },1000);
   }
 
   ngDoCheck(){ //**
@@ -55,6 +60,7 @@ export class CicloVidaComponent implements OnInit {
   ngOnDestroy(){ //***
     //Se ejecuta antes de destruir el componente. Generalmente se usa para liberar recursos.
     console.log('9-ngOnDestroy');
+    clearInterval(this.metodoAsincrono);
   }
 
 }
